@@ -1,32 +1,20 @@
 import React from 'react';
 import './App.css';
 import { useState } from 'react';
-import { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TodoList from './components/TodoList';
-import { TodoProvider } from './components/TodoContext'; 
 
 
 const App = () => {
-   // const test = "back";
+   
    const [backgroundColors, setbackgroundColor] = useState('gradient1');
-   useEffect(() => {
-     const storedColor = localStorage.getItem('backgroundColors');
-     if (storedColor) {
-       setbackgroundColor(JSON.parse(storedColor));
-     }
-   }, []);
- 
-   useEffect(() => {
-     localStorage.setItem('backgroundColor', JSON.stringify(backgroundColors));
-   }, [backgroundColors]);
- 
+  
    const handleColorChange = (color) => {
      setbackgroundColor(color);
 
    }
   return (
-    <TodoProvider>
+    
     <div className={`App p-5 ${backgroundColors}`}>
     <div className='container'>
       <div className='row bg-white mt-5 p-1'>
@@ -43,7 +31,6 @@ const App = () => {
       </div>
     <TodoList />
     </div>
-    </TodoProvider>
   );
 };
 

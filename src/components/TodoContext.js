@@ -7,7 +7,7 @@ export const TodoProvider = ({ children }) => {
   const [newTodo, setNewTodo] = useState('');
   const [editIndex, setEditIndex] = useState(null);
 
-  // ... (votre logique pour ajouter, supprimer, éditer les todos)
+
 
   const handleAddTodo = (e) => {
     e.preventDefault();
