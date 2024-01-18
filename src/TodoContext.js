@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import './App.css';
 
 const TodoContext = createContext();
 
@@ -6,7 +7,13 @@ export const TodoProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
   const [editIndex, setEditIndex] = useState(null);
+  const [backgroundColors, setbackgroundColor] = useState('gradient1');
 
+
+  const handleColorChange = (color) => {
+    setbackgroundColor(color);
+
+  }
 
 
   const handleAddTodo = (e) => {
@@ -62,6 +69,8 @@ export const TodoProvider = ({ children }) => {
         handleDeleteTodo,
         handleDeleteAll,
         handleEditTodo,
+        backgroundColors,
+        handleColorChange
       }}
     >
       {children}

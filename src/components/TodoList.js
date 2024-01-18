@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { TrashFill, PencilFill } from 'react-bootstrap-icons';
-import { useTodoContext } from './TodoContext'; 
+import { useTodoContext } from '../TodoContext'; 
 
 const TodoList = () => {
   const {
